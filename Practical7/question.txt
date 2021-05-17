@@ -1,0 +1,5 @@
+Q：How have new cases and total cases developed over time in Spain?
+
+line number: 70-96
+
+result: In Spain, the outbreak of novel coronavirus occurred on about August 8, 2020.The new cases showed a continuous increasing trend until March 28, 2020 and then it slowly decreased. The total number of cases has been rising during the period.
