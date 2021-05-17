@@ -1,16 +1,23 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
 #store the information
 gene_lengths=[9410,394141,4442,105338,19149,76779,126550,36296,842,15981]
 exon_counts=[51,1142,42,216,25,650,32533,57,1,523]
 
-#import module
-import numpy as np
-import matplotlib.pyplot as plt
+#turn lists into arrays
+lengths_array = np.array(gene_lengths)
+counts_array = np.array(exon_counts)
 
-a=np.array(gene_lengths)
-b=np.array(exon_counts)
-c=a/b #calculate the average exon length
+#calculate the average exon length
+average=lengths_array/counts_array
 
-plt.boxplot(c,
+#sort and print the average length
+sort=sorted(average)
+print(sort)
+
+
+plt.boxplot(sort,
             showmeans=True, #Display average value
             patch_artist=True, #Enable custom color filling
             boxprops = {'color':'grey','facecolor':'beige'}, #Sets box fill color and border color
