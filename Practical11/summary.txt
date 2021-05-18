@@ -1,0 +1,8 @@
+alignment score：
+the score between human and mouse is 1091
+the score between human and random seq is -250
+the score between mouse and random seq is -250
+
+the percentage of identical amino acid between human and mouse is: 89.63963963963964%
+the percentage of identical amino acid between human adn random seq is: 5.405405405405405%
+the percentage of identical amino acid between mouse and random seq is: 5.8558558558558556%
