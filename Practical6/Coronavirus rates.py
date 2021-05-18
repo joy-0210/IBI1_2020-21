@@ -10,8 +10,8 @@ values = np.array([i for i in coutry.values()])
 labels = np.array([j for j in coutry.keys()])
 
 #Draw the pie chart
-explode=[0.1,0.1,0.1,0.1,0.1] #Set each item n radii from the center of the circle
-colors=['beige', 'indigo','blue', 'cyan','yellow'] #set colors for each item
-plt.pie(values,labels=labels,explode=explode,colors=colors,shadow=True,autopct='%1.1f%%') #Draw the pie chart
+explode=[0.1,0.1,0.1,0.1,0.1]                                                               #Set each item n radii from the center of the circle
+colors=['beige', 'indigo','blue', 'cyan','yellow']                                          #set colors for each item
+plt.pie(values,labels=labels,explode=explode,colors=colors,shadow=True,autopct='%1.1f%%')   #Draw the pie chart
 plt.title('COVID-19')
 plt.show()
