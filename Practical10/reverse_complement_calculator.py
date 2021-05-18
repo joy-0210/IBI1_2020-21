@@ -6,11 +6,11 @@ def reverse_complement_calculator(seq) :
     complement_seq=""
     #define the priciple to change the seq into the reverse ones
     for i in range(len(seq)):
-            if seq[i] == "A":
+            if seq[i] == "A" or seq[i] == "a":
                 list_seq[i] = "T"
-            elif seq[i] == "C":
+            elif seq[i] == "C" or seq[i] == "c":
                 list_seq[i] = "G"
-            elif seq[i] == "G":
+            elif seq[i] == "G" or seq[i] == "g":
                 list_seq[i] = "C"
             else:
                 list_seq[i] = "A"
