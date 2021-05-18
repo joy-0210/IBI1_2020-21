@@ -1,0 +1,79 @@
+from xml.dom.minidom import parse
+import matplotlib.pyplot as plt
+import xml.dom.minidom
+import os
+
+# open go_obo.xml
+os.chdir("/Users/jinxt/IBI1_2020-21/Practical14")
+DOM = xml.dom.minidom.parse("go_obo.xml")
+collection = DOM.documentElement
+terms = collection.getElementsByTagName("term")
+
+# 
+def dictionary(terms):
+    dict = {}
+    for term in terms:
+        is_a = [child.childNodes[0].data for child in term.getElementsByTagName("is_a")]
+        all_id = term.getElementsByTagName("id")[0].childNodes[0].data
+        for fa_id in is_a:
+            if not fa_id in dict:           
+                dict[fa_id] = [all_id]  
+            else:                            
+                dict[fa_id].append(all_id)  
+    return dict
+
+# 
+def gene(terms,molecule):
+    gene = []
+    for term in terms:
+        defstr = term.getElementsByTagName("defstr")[0].childNodes[0].data
+        id_related = term.getElementsByTagName("id")[0].childNodes[0].data
+        if not molecule.isupper():  
+            defstr = defstr.lower()
+        if molecule in defstr:  
+            gene.append(id_related)
+    return set(gene)  
+
+# 
+def get_all(dict,lists):
+    all = []
+    for f in lists:
+        if f in dict:
+            child = dict[f]
+            all += child
+            all += get_all(dict,child) 
+    return all
+
+# 
+def count_childnodes(terms,molecule):
+    dicts = dictionary(terms)
+    match = gene(terms,molecule)
+    all_childnodes = get_all(dicts,match)
+    number = len(set(all_childnodes))
+    return number
+#
+DNA = count_childnodes(terms,"DNA")
+RNA = count_childnodes(terms,"RNA")
+Protein = count_childnodes(terms,"protein")
+Carbohydrate = count_childnodes(terms,"carbohydrate")
+
+#output the result
+print("The number of childNodes of all DNA-associated terms is ",DNA)
+print("The number of childNodes of all RNA-associated terms is ",RNA)
+print("The number of childNodes of all protein-associated terms is ",Protein)
+print("The number of childNodes of all carbohydrate-associated terms is ",Carbohydrate)
+
+# draw pie chart
+labels='DNA', 'RNA', 'Protein', 'Carbohydrate'
+values=[DNA, RNA, Protein, Carbohydrate]
+explode=[0.1,0.1,0.1,0.1] 
+colors=['beige','azure', 'cyan','yellow'] 
+plt.pie(values,
+        labels=labels,
+        explode=explode,
+        colors=colors,
+        shadow=True,
+        autopct='%1.1f%%')  
+plt.title("the number of childNodes associated with DNA, RNA, Protein and Carbohydrate")
+plt.show()
+
