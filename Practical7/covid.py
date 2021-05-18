@@ -41,8 +41,8 @@ world_new_deaths=covid_data.loc[L2,"new_deaths"]
 world_new_cases=world_new_cases=covid_data.loc[L2,"new_cases"]
 
 #Use numpy to compute both the mean and the median for new cases around the world
-np.mean(world_new_cases) 
-np.median(world_new_cases) 
+print("mean: "+str(np.mean(world_new_cases))) 
+print("median: "+str(np.median(world_new_cases)))
 
 #make a boxplot for World_new_case
 plt.boxplot(world_new_cases,
