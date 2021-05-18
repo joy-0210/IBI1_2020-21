@@ -18,11 +18,11 @@ print(sort)
 
 
 plt.boxplot(sort,
-            showmeans=True, #Display average value
-            patch_artist=True, #Enable custom color filling
-            boxprops = {'color':'grey','facecolor':'beige'}, #Sets box fill color and border color
-            meanprops = {'marker':'o','markerfacecolor':'yellow'}, #Set the shape and fill color of the mean point
-            medianprops = {'linestyle':'--','color':'orange'})#Set the type and color of the median line
-plt.title('exon length') #Set the name of the boxplot
+            showmeans=True,                                             #Display average value
+            patch_artist=True,                                          #Enable custom color filling
+            boxprops = {'color':'grey','facecolor':'beige'},            #Sets box fill color and border color
+            meanprops = {'marker':'o','markerfacecolor':'yellow'},      #Set the shape and fill color of the mean point
+            medianprops = {'linestyle':'--','color':'orange'})          #Set the type and color of the median line
+plt.title('exon length')                                                #Set the name of the boxplot
 
 plt.show()
