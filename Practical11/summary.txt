@@ -1,8 +1,15 @@
 alignment score：
-the score between human and mouse is 1091
-the score between human and random seq is -250
-the score between mouse and random seq is -250
+between human and mouse is 1091
+between human and random seq is -250
+between mouse and random seq is -250
 
-the percentage of identical amino acid between human and mouse is: 89.63963963963964%
-the percentage of identical amino acid between human adn random seq is: 5.405405405405405%
-the percentage of identical amino acid between mouse and random seq is: 5.8558558558558556%
+the percentage of identical amino acid:
+between human and mouse is 89.63963963963964%
+between human adn random seq is 5.405405405405405%
+between mouse and random seq is 5.8558558558558556%
+
+conclusion
+The bigger alignmment score is, the more similar the two sequences are.
+The alignment score between both human and random seq, mouse and random seq are -250. And the percentage of identical amino acid between both human and random seq, mouse and random seq are smaller than 6%. These basically rules out experimental chance. 
+The alignment score and the identical percentage between human and mouse are very high, which shows human and mouse are closely relevant.
+According to the theory of origin of species, it is likely that the SOD2 is a highly conserved sequence and SOD2 proteins are similar in mammals.
