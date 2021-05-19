@@ -1,7 +1,9 @@
 #create	a string variable seq
 seq='ATGCGACTACGATCGAGGGCC'
+
 # create a variate to store the result
 protein=""
+
 # make a dictionary to show which codon matches which protein
 codon_dict = {
 'TTT':'F', 'TTC':'F', 'TTA':'L', 'TTG':'L',
@@ -20,6 +22,7 @@ codon_dict = {
 'GCT':'A', 'GCC':'A', 'GCA':'A', 'GCG':'A',
 'GAT':'D', 'GAC':'D', 'GAA':'E', 'GAG':'E',
 'GGT':'G', 'GGC':'G', 'GGA':'G', 'GGG':'G'}
+
 #select the DNA triplet and use the dictionary to translate it
 for i in range(0,len(seq),3):
     triplet=seq[i:i+3]
