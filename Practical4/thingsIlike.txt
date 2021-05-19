@@ -8,5 +8,17 @@ I like fruits
 I like being with friends
 I like cats
 I like fish
-
-
+=======
+I like flowers
+I like eggs
+I like singing
+I like dogs
+I like watching TV
+I like my bed
+I like eating ice-cream
+I like reading
+I like cats
+I like biology
+I like singing
+I don't like running
+>>>>>>> Alex
