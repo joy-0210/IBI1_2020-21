@@ -9,7 +9,7 @@ DOM = xml.dom.minidom.parse("go_obo.xml")
 collection = DOM.documentElement
 terms = collection.getElementsByTagName("term")
 
-# 
+# create a dictiionary to store and check all is_a
 def dictionary(terms):
     dict = {}
     for term in terms:
@@ -22,7 +22,7 @@ def dictionary(terms):
                 dict[fa_id].append(all_id)  
     return dict
 
-# 
+# extract the information
 def gene(terms,molecule):
     gene = []
     for term in terms:
@@ -34,7 +34,7 @@ def gene(terms,molecule):
             gene.append(id_related)
     return set(gene)  
 
-# 
+# get all childnodes in the dictionary
 def get_all(dict,lists):
     all = []
     for f in lists:
@@ -44,14 +44,14 @@ def get_all(dict,lists):
             all += get_all(dict,child) 
     return all
 
-# 
+# cout the childnodes
 def count_childnodes(terms,molecule):
     dicts = dictionary(terms)
     match = gene(terms,molecule)
     all_childnodes = get_all(dicts,match)
     number = len(set(all_childnodes))
     return number
-#
+#get the result
 DNA = count_childnodes(terms,"DNA")
 RNA = count_childnodes(terms,"RNA")
 Protein = count_childnodes(terms,"protein")
