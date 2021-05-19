@@ -13,6 +13,6 @@
            counts_array = np.array(exon_counts)
            average=lengths_array/counts_array
            sort=sorted(average)
-           print ("the average lengths are:" + str(average))"
+           print(sort)"
            
            
